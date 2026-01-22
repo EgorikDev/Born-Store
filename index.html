@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Born Survival Store - Магазин скинов и DLC</title>
+    <title>Born Survival Store - Магазин скинов</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -17,15 +17,11 @@
             background-color: #0c1218;
             color: #e0e0e0;
             line-height: 1.6;
-            background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(12, 18, 24, 0.97), rgba(12, 18, 24, 0.97)), 
+                            url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-        }
-        
-        .overlay {
-            background-color: rgba(12, 18, 24, 0.9);
-            min-height: 100vh;
         }
         
         .container {
@@ -59,9 +55,9 @@
         }
         
         .logo-icon {
-            color: #ff6b35;
+            color: #4fc3f7;
             font-size: 32px;
-            text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+            text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
         }
         
         .logo h1 {
@@ -71,7 +67,7 @@
         }
         
         .logo span {
-            color: #ff6b35;
+            color: #4fc3f7;
             font-weight: bold;
         }
         
@@ -91,14 +87,14 @@
         }
         
         .btn-primary {
-            background-color: #ff6b35;
+            background-color: #4fc3f7;
             color: white;
         }
         
         .btn-primary:hover {
-            background-color: #e55a2b;
+            background-color: #29b6f6;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 5px 15px rgba(79, 195, 247, 0.3);
         }
         
         .btn-secondary {
@@ -108,6 +104,15 @@
         
         .btn-secondary:hover {
             background-color: #3a4a5a;
+        }
+        
+        .btn-success {
+            background-color: #81c784;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background-color: #66bb6a;
         }
         
         .balance {
@@ -124,20 +129,52 @@
             color: #ffd166;
         }
         
+        /* Navigation */
+        .main-nav {
+            background-color: rgba(26, 37, 47, 0.9);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #2a3a4a;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            color: #b0b7c3;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(79, 195, 247, 0.1);
+            color: #4fc3f7;
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(26, 37, 47, 0.9), rgba(12, 18, 24, 0.95)), 
                         url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
             background-size: cover;
             background-position: center;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
             margin-bottom: 40px;
             border-bottom: 2px solid #2a3a4a;
+            border-radius: 0 0 10px 10px;
         }
         
         .hero h2 {
-            font-size: 42px;
+            font-size: 36px;
             margin-bottom: 20px;
             color: #fff;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -150,89 +187,229 @@
             color: #b0b7c3;
         }
         
-        /* Tutorial Section */
-        .tutorial {
+        /* Deposit Section */
+        .deposit-section {
             background-color: #1a252f;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
             margin-bottom: 40px;
             border: 1px solid #2a3a4a;
         }
         
-        .tutorial h3 {
-            color: #ff6b35;
-            margin-bottom: 20px;
-            font-size: 24px;
+        .deposit-section h3 {
+            color: #4fc3f7;
+            margin-bottom: 25px;
+            font-size: 28px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .tutorial-steps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
+        .deposit-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
         }
         
-        .step {
-            flex: 1;
-            min-width: 250px;
+        @media (max-width: 768px) {
+            .deposit-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .deposit-options {
             background-color: #0c1218;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            border-left: 4px solid #ff6b35;
+            border: 1px solid #2a3a4a;
         }
         
-        .step-number {
-            display: inline-block;
-            background-color: #ff6b35;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
+        .deposit-options h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .amount-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .amount-option {
+            background-color: #1a252f;
+            border: 2px solid #2a3a4a;
+            border-radius: 8px;
+            padding: 15px;
             text-align: center;
-            line-height: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .amount-option:hover {
+            border-color: #4fc3f7;
+            background-color: rgba(79, 195, 247, 0.1);
+        }
+        
+        .amount-option.selected {
+            border-color: #81c784;
+            background-color: rgba(129, 199, 132, 0.1);
+        }
+        
+        .amount-value {
+            font-size: 24px;
+            color: #ffd166;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .amount-label {
+            color: #b0b7c3;
+            font-size: 14px;
+        }
+        
+        .custom-amount {
+            margin-top: 20px;
+        }
+        
+        .custom-amount label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b0b7c3;
+        }
+        
+        .custom-amount input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #0c1218;
+            border: 1px solid #2a3a4a;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .user-balance {
+            background-color: #0c1218;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #2a3a4a;
+            text-align: center;
+        }
+        
+        .user-balance h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .balance-amount {
+            font-size: 42px;
+            color: #ffd166;
             font-weight: bold;
             margin-bottom: 10px;
         }
         
-        /* Filter */
-        .filter {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 10px 25px;
-            background-color: #1a252f;
+        .balance-label {
             color: #b0b7c3;
-            border: 1px solid #2a3a4a;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 20px;
         }
         
-        .filter-btn.active, .filter-btn:hover {
-            background-color: #ff6b35;
+        .deposit-button {
+            width: 100%;
+            padding: 18px;
+            background-color: #81c784;
             color: white;
-            border-color: #ff6b35;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         
-        /* Store items */
+        .deposit-button:hover {
+            background-color: #66bb6a;
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            background-color: #1a252f;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border: 1px solid #2a3a4a;
+        }
+        
+        .payment-methods h4 {
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .payment-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .payment-icon {
+            background-color: #0c1218;
+            border: 1px solid #2a3a4a;
+            border-radius: 8px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b0b7c3;
+            transition: all 0.3s;
+            min-width: 150px;
+            justify-content: center;
+        }
+        
+        .payment-icon:hover {
+            border-color: #4fc3f7;
+            color: #fff;
+        }
+        
+        /* Store Items */
+        .store-section {
+            background-color: #1a252f;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border: 1px solid #2a3a4a;
+        }
+        
+        .store-section h3 {
+            color: #4fc3f7;
+            margin-bottom: 25px;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
         .store-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         
         .item-card {
-            background-color: #1a252f;
+            background-color: #0c1218;
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -240,14 +417,14 @@
         }
         
         .item-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            border-color: #ff6b35;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: #4fc3f7;
         }
         
         .item-image {
-            height: 180px;
-            background-color: #0c1218;
+            height: 160px;
+            background-color: #1a252f;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -265,7 +442,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #ff6b35;
+            background-color: #4fc3f7;
             color: white;
             padding: 5px 10px;
             border-radius: 5px;
@@ -274,12 +451,13 @@
             z-index: 2;
         }
         
-        .dlc-badge {
-            background-color: #06d6a0;
+        .arctic-badge {
+            background-color: #80deea;
+            color: #0c1218;
         }
         
-        .barricade-badge {
-            background-color: #118ab2;
+        .bloody-badge {
+            background-color: #ef5350;
         }
         
         .item-info {
@@ -287,7 +465,7 @@
         }
         
         .item-name {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
             color: #fff;
         }
@@ -306,7 +484,7 @@
         }
         
         .price {
-            font-size: 24px;
+            font-size: 22px;
             color: #ffd166;
             font-weight: bold;
             display: flex;
@@ -315,10 +493,10 @@
         }
         
         .buy-btn {
-            background-color: #06d6a0;
+            background-color: #81c784;
             color: white;
             border: none;
-            padding: 8px 20px;
+            padding: 8px 15px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
@@ -326,169 +504,69 @@
         }
         
         .buy-btn:hover {
-            background-color: #05b686;
+            background-color: #66bb6a;
         }
         
-        /* Cart */
-        .cart-container {
+        .buy-btn:disabled {
+            background-color: #2a3a4a;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        /* Support Section */
+        .support-section {
             background-color: #1a252f;
+            padding: 40px;
             border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 60px;
-            border: 1px solid #2a3a4a;
-        }
-        
-        .cart-container h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #ff6b35;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .cart-items {
-            margin-bottom: 30px;
-            min-height: 100px;
-        }
-        
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #2a3a4a;
-        }
-        
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-        
-        .cart-item-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .cart-item-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .cart-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .cart-item-name {
-            font-weight: 600;
-            color: #fff;
-        }
-        
-        .cart-item-price {
-            color: #ffd166;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .remove-item {
-            background-color: #ef476f;
-            color: white;
-            border: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .remove-item:hover {
-            background-color: #d43d63;
-        }
-        
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            padding-top: 20px;
-            border-top: 2px solid #2a3a4a;
-            color: #fff;
-        }
-        
-        .total-price {
-            color: #ffd166;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .checkout-btn {
-            width: 100%;
-            padding: 15px;
-            background-color: #ff6b35;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .checkout-btn:hover {
-            background-color: #e55a2b;
-        }
-        
-        /* Payment methods */
-        .payment-methods-container {
-            background-color: #1a252f;
-            border-radius: 10px;
-            padding: 20px;
             margin-bottom: 40px;
             border: 1px solid #2a3a4a;
         }
         
-        .payment-methods-container h4 {
-            color: #ff6b35;
-            margin-bottom: 15px;
+        .support-section h3 {
+            color: #4fc3f7;
+            margin-bottom: 25px;
+            font-size: 28px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .payment-icons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
         }
         
-        .payment-icon {
+        .support-option {
             background-color: #0c1218;
-            border: 1px solid #2a3a4a;
+            padding: 25px;
             border-radius: 8px;
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #b0b7c3;
+            border: 1px solid #2a3a4a;
             transition: all 0.3s;
+            cursor: pointer;
         }
         
-        .payment-icon:hover {
-            border-color: #ff6b35;
+        .support-option:hover {
+            border-color: #4fc3f7;
+            transform: translateY(-5px);
+        }
+        
+        .support-option i {
+            font-size: 32px;
+            color: #4fc3f7;
+            margin-bottom: 15px;
+        }
+        
+        .support-option h4 {
             color: #fff;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .support-option p {
+            color: #8a9bb2;
+            font-size: 14px;
         }
         
         /* Footer */
@@ -496,6 +574,7 @@
             background-color: #1a252f;
             padding: 40px 0;
             border-top: 2px solid #2a3a4a;
+            margin-top: 60px;
         }
         
         .footer-content {
@@ -506,7 +585,7 @@
         }
         
         .footer-section h4 {
-            color: #ff6b35;
+            color: #4fc3f7;
             margin-bottom: 20px;
             font-size: 18px;
         }
@@ -519,7 +598,7 @@
         }
         
         .footer-section a:hover {
-            color: #ff6b35;
+            color: #4fc3f7;
         }
         
         .copyright {
@@ -531,6 +610,119 @@
             font-size: 14px;
         }
         
+        /* Modals */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background-color: #1a252f;
+            border-radius: 10px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            border: 2px solid #4fc3f7;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-header {
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modal-body {
+            margin-bottom: 25px;
+        }
+        
+        .modal-footer {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #b0b7c3;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #0c1218;
+            border: 1px solid #2a3a4a;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Notifications */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1001;
+            animation: slideIn 0.3s ease-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 400px;
+        }
+        
+        .notification.success {
+            background-color: #81c784;
+            color: white;
+        }
+        
+        .notification.error {
+            background-color: #ef5350;
+            color: white;
+        }
+        
+        .notification.info {
+            background-color: #4fc3f7;
+            color: white;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .logo-area {
@@ -539,370 +731,595 @@
             }
             
             .hero h2 {
-                font-size: 32px;
+                font-size: 28px;
             }
             
-            .store-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            .tutorial-steps {
+            .nav-links {
                 flex-direction: column;
+                align-items: center;
+            }
+            
+            .payment-icons {
+                justify-content: center;
+            }
+            
+            .payment-icon {
+                min-width: 120px;
+            }
+            
+            .support-options {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="overlay">
+    <div class="container">
         <!-- Header -->
         <header>
-            <div class="container">
-                <div class="logo-area">
-                    <div class="logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-fire-alt"></i>
-                        </div>
-                        <h1>BORN <span>SURVIVAL</span> STORE</h1>
+            <div class="logo-area">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-snowflake"></i>
                     </div>
-                    
-                    <div class="user-actions">
-                        <div class="balance">
-                            <i class="fas fa-coins"></i>
-                            <span>2,850 <strong>Born Coins</strong></span>
-                        </div>
-                        <button class="btn btn-secondary"><i class="fas fa-user"></i> Профиль</button>
-                        <button class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Корзина (<span id="cart-count">0</span>)</button>
+                    <h1>BORN <span>SURVIVAL</span> STORE</h1>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="balance">
+                        <i class="fas fa-wallet"></i>
+                        <span id="user-balance">1,250</span> <strong>₽</strong>
                     </div>
+                    <button class="btn btn-secondary" id="profile-btn">
+                        <i class="fas fa-user"></i> Профиль
+                    </button>
+                    <button class="btn btn-primary" id="support-btn">
+                        <i class="fas fa-headset"></i> Поддержка
+                    </button>
                 </div>
             </div>
         </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <h2>Магазин выживания в Born</h2>
-                <p>Приобретайте эксклюзивные скины для оружия, баррикады, наборы для выживания и DLC. Получайте преимущество в жестоком мире выживания!</p>
-                <button class="btn btn-primary" style="padding: 15px 30px; font-size: 18px;">
-                    <i class="fas fa-play-circle"></i> Играть в Born Survival
-                </button>
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i> Главная
+                </a>
+                <a href="#" class="nav-link" data-section="shop">
+                    <i class="fas fa-shopping-cart"></i> Магазин
+                </a>
+                <a href="#" class="nav-link" data-section="deposit">
+                    <i class="fas fa-coins"></i> Пополнение
+                </a>
+                <a href="#" class="nav-link" data-section="support">
+                    <i class="fas fa-question-circle"></i> Поддержка
+                </a>
+                <a href="#" class="nav-link" data-section="reports">
+                    <i class="fas fa-flag"></i> Жалобы
+                </a>
             </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home-section">
+            <h2>Born Survival Store</h2>
+            <p>Пополняйте баланс и покупайте скины для игры Born Survival. Все предметы по фиксированной цене - 1000 ₽.</p>
+            <button class="btn btn-primary" style="padding: 15px 30px; font-size: 18px;">
+                <i class="fas fa-play-circle"></i> Играть в Born Survival
+            </button>
         </section>
 
-        <div class="container">
-            <!-- Tutorial Section -->
-            <section class="tutorial">
-                <h3><i class="fas fa-graduation-cap"></i> Как купить предметы в магазине</h3>
-                <div class="tutorial-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h4>Пополните баланс</h4>
-                        <p>Купите Born Coins через FreeKassa. Выберите удобный способ оплаты: карта, электронный кошелек или мобильный платеж.</p>
+        <!-- Deposit Section -->
+        <section class="deposit-section" id="deposit-section" style="display: none;">
+            <h3><i class="fas fa-credit-card"></i> Пополнение счета</h3>
+            
+            <div class="deposit-info">
+                <div class="deposit-options">
+                    <h4>Выберите сумму пополнения</h4>
+                    
+                    <div class="amount-options">
+                        <div class="amount-option" data-amount="100">
+                            <div class="amount-value">100 ₽</div>
+                            <div class="amount-label">+100 ₽</div>
+                        </div>
+                        <div class="amount-option" data-amount="250">
+                            <div class="amount-value">250 ₽</div>
+                            <div class="amount-label">+250 ₽</div>
+                        </div>
+                        <div class="amount-option" data-amount="500">
+                            <div class="amount-value">500 ₽</div>
+                            <div class="amount-label">+500 ₽</div>
+                        </div>
+                        <div class="amount-option selected" data-amount="1000">
+                            <div class="amount-value">1,000 ₽</div>
+                            <div class="amount-label">+1000 ₽</div>
+                        </div>
                     </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h4>Выберите предметы</h4>
-                        <p>Отфильтруйте скины, баррикады или DLC. Нажмите "Купить" чтобы добавить в корзину.</p>
+                    
+                    <div class="custom-amount">
+                        <label for="custom-amount-input">Или укажите свою сумму (макс. 1000 ₽):</label>
+                        <input type="number" id="custom-amount-input" min="10" max="1000" step="10" placeholder="Сумма в рублях">
                     </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h4>Оплатите заказ</h4>
-                        <p>Перейдите в корзину, проверьте заказ и оплатите через FreeKassa. Предметы появятся в инвентаре сразу после оплаты.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Payment Methods -->
-            <div class="payment-methods-container">
-                <h4><i class="fas fa-credit-card"></i> Доступные способы оплаты через FreeKassa</h4>
-                <div class="payment-icons">
-                    <div class="payment-icon">
-                        <i class="fab fa-cc-visa"></i> Visa
-                    </div>
-                    <div class="payment-icon">
-                        <i class="fab fa-cc-mastercard"></i> Mastercard
-                    </div>
-                    <div class="payment-icon">
-                        <i class="fas fa-mobile-alt"></i> Мобильные платежи
-                    </div>
-                    <div class="payment-icon">
-                        <i class="fab fa-qiwi"></i> QIWI
-                    </div>
-                    <div class="payment-icon">
-                        <i class="fas fa-wallet"></i> Электронные кошельки
-                    </div>
-                    <div class="payment-icon">
-                        <i class="fas fa-university"></i> Интернет-банки
-                    </div>
-                </div>
-            </div>
-
-            <!-- Filter -->
-            <div class="filter">
-                <button class="filter-btn active" data-filter="all">Все предметы</button>
-                <button class="filter-btn" data-filter="skins">Скины оружия</button>
-                <button class="filter-btn" data-filter="barricades">Баррикады</button>
-                <button class="filter-btn" data-filter="dlc">DLC и наборы</button>
-            </div>
-
-            <!-- Store Items Grid -->
-            <div class="store-grid" id="store-items">
-                <!-- Items will be generated by JavaScript -->
-            </div>
-
-            <!-- Shopping Cart -->
-            <div class="cart-container">
-                <h3><i class="fas fa-shopping-cart"></i> Ваша корзина</h3>
-                
-                <div class="cart-items" id="cart-items">
-                    <!-- Cart items will be added here -->
-                    <p id="empty-cart-message">Ваша корзина пуста. Добавьте предметы из магазина.</p>
                 </div>
                 
-                <div class="cart-total">
-                    <span>Итого:</span>
-                    <span class="total-price"><i class="fas fa-coins"></i> <span id="cart-total">0</span> Born Coins</span>
+                <div class="user-balance">
+                    <h4>Ваш баланс</h4>
+                    <div class="balance-amount" id="balance-display">1,250 ₽</div>
+                    <div class="balance-label">Доступно для покупок</div>
+                    <p style="color: #8a9bb2; font-size: 14px; margin-top: 15px;">
+                        <i class="fas fa-info-circle"></i> Каждый предмет стоит 1000 ₽
+                    </p>
                 </div>
-                
-                <button class="checkout-btn" id="checkout-btn">
-                    <i class="fas fa-lock"></i> Оплатить через FreeKassa
-                </button>
+            </div>
+            
+            <button class="deposit-button" id="deposit-button">
+                <i class="fas fa-lock"></i> Пополнить через FreeKassa
+            </button>
+        </section>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods" id="payment-methods" style="display: none;">
+            <h4><i class="fas fa-wallet"></i> Способы оплаты через FreeKassa</h4>
+            <div class="payment-icons">
+                <div class="payment-icon">
+                    <i class="fab fa-cc-visa"></i> Visa
+                </div>
+                <div class="payment-icon">
+                    <i class="fab fa-cc-mastercard"></i> Mastercard
+                </div>
+                <div class="payment-icon">
+                    <i class="fas fa-mobile-alt"></i> Мобильные
+                </div>
+                <div class="payment-icon">
+                    <i class="fab fa-qiwi"></i> QIWI
+                </div>
+                <div class="payment-icon">
+                    <i class="fas fa-university"></i> Банки
+                </div>
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h4>Born Survival Store</h4>
-                        <p>Официальный магазин игры Born Survival. Приобретайте скины, баррикады, DLC и эксклюзивный контент для выживания.</p>
-                        <p><i class="fas fa-shield-alt" style="color: #06d6a0;"></i> Все платежи защищены через FreeKassa</p>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Поддержка</h4>
-                        <a href="#"><i class="fas fa-question-circle"></i> Центр поддержки</a>
-                        <a href="#"><i class="fas fa-redo"></i> Восстановление покупок</a>
-                        <a href="#"><i class="fas fa-file-contract"></i> Политика возврата</a>
-                        <a href="#"><i class="fas fa-comments"></i> FAQ</a>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Игра Born Survival</h4>
-                        <p><i class="fas fa-skull-crossbones"></i> Жестокий мир выживания</p>
-                        <p><i class="fas fa-fort-awesome"></i> Стройте баррикады, находите ресурсы</p>
-                        <p><i class="fas fa-users"></i> Кооператив на 4-х игроков</p>
-                        <p><i class="fas fa-expand-arrows-alt"></i> Открытый мир, полный опасностей</p>
-                    </div>
+        <!-- Store Section -->
+        <section class="store-section" id="shop-section" style="display: none;">
+            <h3><i class="fas fa-shopping-cart"></i> Магазин скинов</h3>
+            <p style="color: #b0b7c3; margin-bottom: 25px;">Все предметы стоят 1000 ₽ каждый. После оплаты скин появится в вашем инвентаре игры.</p>
+            
+            <div class="store-grid" id="store-items">
+                <!-- Items will be generated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="support-section" id="support-section" style="display: none;">
+            <h3><i class="fas fa-headset"></i> Техническая поддержка</h3>
+            <p style="color: #b0b7c3; margin-bottom: 25px;">Выберите категорию обращения:</p>
+            
+            <div class="support-options">
+                <div class="support-option" id="report-bug-option">
+                    <i class="fas fa-bug"></i>
+                    <h4>Сообщить о баге</h4>
+                    <p>Нашли ошибку в игре? Сообщите нам!</p>
                 </div>
                 
-                <div class="copyright">
-                    <p>&copy; 2023 Born Survival Store. Все права защищены. Born Survival является игрой в жанре выживания, разработанной на Unity.</p>
-                    <p>Born Coins - внутриигровая валюта. Все покупки защищены через FreeKassa.</p>
+                <div class="support-option" id="report-cheater-option">
+                    <i class="fas fa-user-slash"></i>
+                    <h4>Жалоба на читера</h4>
+                    <p>Пожаловаться на игрока, использующего читы</p>
                 </div>
+                
+                <div class="support-option" id="game-issue-option">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Проблемы с игрой</h4>
+                    <p>Технические проблемы, лаги, ошибки загрузки</p>
+                </div>
+                
+                <div class="support-option" id="payment-issue-option">
+                    <i class="fas fa-credit-card"></i>
+                    <h4>Проблемы с оплатой</h4>
+                    <p>Не пришли средства, ошибка при оплате</p>
+                </div>
+                
+                <div class="support-option" id="contact-support-option">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Связаться с поддержкой</h4>
+                    <p>Другие вопросы и предложения</p>
+                </div>
+                
+                <div class="support-option" id="rules-option">
+                    <i class="fas fa-book"></i>
+                    <h4>Правила и FAQ</h4>
+                    <p>Частые вопросы и правила игры</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section class="support-section" id="reports-section" style="display: none;">
+            <h3><i class="fas fa-flag"></i> Система жалоб</h3>
+            <p style="color: #b0b7c3; margin-bottom: 25px;">Подайте жалобу на нарушителей правил игры.</p>
+            
+            <div style="background-color: #0c1218; padding: 25px; border-radius: 8px; border: 1px solid #2a3a4a; margin-bottom: 30px;">
+                <h4 style="color: #fff; margin-bottom: 15px;">Как подать жалобу:</h4>
+                <ol style="color: #8a9bb2; padding-left: 20px; margin-bottom: 20px;">
+                    <li>Укажите никнейм нарушителя</li>
+                    <li>Опишите нарушение</li>
+                    <li>Приложите доказательства (скриншоты/видео)</li>
+                    <li>Укажите дату и время нарушения</li>
+                </ol>
+                <p style="color: #ef5350; font-size: 14px;">
+                    <i class="fas fa-exclamation-circle"></i> Ложные жалобы могут привести к блокировке вашего аккаунта
+                </p>
+            </div>
+            
+            <button class="btn btn-primary" id="new-report-btn" style="padding: 15px 30px; font-size: 18px;">
+                <i class="fas fa-plus-circle"></i> Подать новую жалобу
+            </button>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Born Survival Store</h4>
+                    <p>Официальный магазин игры Born Survival. Пополняйте баланс и покупайте скины через FreeKassa.</p>
+                    <p><i class="fas fa-shield-alt" style="color: #81c784;"></i> Безопасные платежи</p>
+                    <p><i class="fas fa-link" style="color: #4fc3f7;"></i> FreeKassa ID: 68728</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Поддержка</h4>
+                    <p>Email: support@bornsurvival.com</p>
+                    <p>Discord: discord.gg/bornsurvival</p>
+                    <p>ВКонтакте: vk.com/bornsurvival</p>
+                    <p>Время работы: 24/7</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Born Survival</h4>
+                    <p><i class="fas fa-snowflake"></i> Игра в жанре выживания</p>
+                    <p><i class="fas fa-users"></i> Кооператив до 4 игроков</p>
+                    <p><i class="fas fa-expand-arrows-alt"></i> Открытый мир</p>
+                    <p><i class="fas fa-shield-alt"></i> Система баррикад</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Born Survival Store. Все платежи осуществляются через FreeKassa. Максимальная сумма пополнения - 1000 ₽.</p>
+                <p>Merchant ID: 68728 | Все предметы стоят 1000 ₽ | Ссылка FreeKassa: https://pay.freekassa.net/?m=68728&oa=1000&o=123&s=001bdd16f4f3a5c7ba8599dc96f2a838&currency=RUB</p>
             </div>
         </footer>
     </div>
 
+    <!-- Modals -->
+    <div class="modal" id="deposit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-lock"></i>
+                <span>Подтверждение пополнения</span>
+            </div>
+            <div class="modal-body">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <div style="font-size: 42px; color: #ffd166; font-weight: bold; margin-bottom: 10px;" id="deposit-amount-display">
+                        1,000 ₽
+                    </div>
+                    <p style="color: #b0b7c3;">Сумма пополнения</p>
+                </div>
+                
+                <div style="background-color: #0c1218; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                    <p style="color: #8a9bb2; font-size: 14px; text-align: center;">
+                        <i class="fas fa-info-circle"></i> После оплаты средства будут зачислены на ваш баланс в течение 1-5 минут
+                    </p>
+                </div>
+                
+                <p style="color: #b0b7c3; font-size: 14px; text-align: center;">
+                    Нажмите "Перейти к оплате" чтобы перейти на страницу FreeKassa
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="https://pay.freekassa.net/?m=68728&oa=1000&o=123&s=001bdd16f4f3a5c7ba8599dc96f2a838&currency=RUB" 
+                   target="_blank" 
+                   class="btn btn-success" 
+                   style="text-decoration: none;">
+                    <i class="fas fa-external-link-alt"></i> Перейти к оплате
+                </a>
+                <button class="btn btn-secondary" id="close-deposit-modal">
+                    <i class="fas fa-times"></i> Отмена
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="support-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-headset"></i>
+                <span id="support-modal-title">Техническая поддержка</span>
+            </div>
+            <div class="modal-body">
+                <form id="support-form">
+                    <div class="form-group">
+                        <label for="support-category">Категория обращения:</label>
+                        <select id="support-category" required>
+                            <option value="">Выберите категорию</option>
+                            <option value="bug">Сообщить о баге</option>
+                            <option value="cheater">Жалоба на читера</option>
+                            <option value="game_issue">Проблемы с игрой</option>
+                            <option value="payment">Проблемы с оплатой</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="support-subject">Тема:</label>
+                        <input type="text" id="support-subject" placeholder="Кратко опишите проблему" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="support-message">Подробное описание:</label>
+                        <textarea id="support-message" placeholder="Опишите проблему максимально подробно..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="support-email">Ваш email:</label>
+                        <input type="email" id="support-email" placeholder="email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="support-attachments">Доказательства (если есть):</label>
+                        <input type="file" id="support-attachments" multiple accept="image/*,.pdf,.txt">
+                        <p style="color: #8a9bb2; font-size: 12px; margin-top: 5px;">
+                            Можно приложить скриншоты, видео или логи (макс. 10 МБ)
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="submit-support">
+                    <i class="fas fa-paper-plane"></i> Отправить
+                </button>
+                <button class="btn btn-secondary" id="close-support-modal">
+                    <i class="fas fa-times"></i> Отмена
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="report-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-flag"></i>
+                <span>Подача жалобы</span>
+            </div>
+            <div class="modal-body">
+                <form id="report-form">
+                    <div class="form-group">
+                        <label for="report-player">Никнейм нарушителя:</label>
+                        <input type="text" id="report-player" placeholder="Введите никнейм игрока" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="report-type">Тип нарушения:</label>
+                        <select id="report-type" required>
+                            <option value="">Выберите тип</option>
+                            <option value="cheating">Использование читов</option>
+                            <option value="toxic">Токсичное поведение</option>
+                            <option value="exploit">Использование багов</option>
+                            <option value="scam">Мошенничество</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="report-description">Описание нарушения:</label>
+                        <textarea id="report-description" placeholder="Подробно опишите нарушение..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="report-date">Дата и время нарушения:</label>
+                        <input type="datetime-local" id="report-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="report-proof">Доказательства (обязательно):</label>
+                        <input type="file" id="report-proof" accept="image/*,.mp4,.avi" required>
+                        <p style="color: #8a9bb2; font-size: 12px; margin-top: 5px;">
+                            Скриншоты или видео доказательства обязательны
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="submit-report">
+                    <i class="fas fa-flag"></i> Подать жалобу
+                </button>
+                <button class="btn btn-secondary" id="close-report-modal">
+                    <i class="fas fa-times"></i> Отмена
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Store items data with YOUR images
+        // Store items data - ВСЕ предметы по 1000 ₽
         const storeItems = [
             {
                 id: 1,
-                name: "AKSU (ARCTIC)",
+                name: "AKSU Arctic",
                 type: "skins",
                 description: "Арктический камуфляж для автомата AKSU. Идеален для снежных локаций.",
-                price: 450,
-                image: "images/aksu_ice.jpeg", // Ваш файл
-                isDefault: false
+                price: 1000,
+                image: "images/aksu_ice.jpeg",
+                badge: "arctic"
             },
             {
                 id: 2,
                 name: "Кровавый AKR 47",
                 type: "skins",
                 description: "Устрашающий кровавый скин для автомата AKR 47.",
-                price: 550,
-                image: "images/akr47_bloody.jpeg", // Ваш файл
-                isDefault: false
+                price: 1000,
+                image: "images/akr47_bloody.jpeg",
+                badge: "bloody"
             },
             {
                 id: 3,
                 name: "Кровавый MP5",
                 type: "skins",
                 description: "Пистолет-пулемет MP5 с кровавым покрытием.",
-                price: 500,
-                image: "images/mp5_bloody.jpeg", // Ваш файл
-                isDefault: false
+                price: 1000,
+                image: "images/mp5_bloody.jpeg",
+                badge: "bloody"
             },
             {
                 id: 4,
-                name: "Металлическая маска",
-                type: "skins",
-                description: "Прочная металлическая маска для защиты лица.",
-                price: 320,
-                image: "https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
+                name: "Arctic DLC",
+                type: "dlc",
+                description: "Арктическое дополнение с новыми локациями и врагами.",
+                price: 1000,
+                image: "images/barricades_ice.jpeg",
+                badge: "arctic"
             },
             {
                 id: 5,
-                name: "AKSU (DANGER)",
+                name: "AKSU Danger",
                 type: "skins",
                 description: "Предупреждающий камуфляж для автомата AKSU.",
-                price: 480,
-                image: "images/aksu_danger.jpeg", // Ваш файл
-                isDefault: false
+                price: 1000,
+                image: "images/aksu_danger.jpeg"
             },
             {
                 id: 6,
-                name: "Топор (Градиент)",
+                name: "Топор Градиент",
                 type: "skins",
                 description: "Топор с градиентным цветовым покрытием.",
-                price: 380,
-                image: "images/axe_gradient.jpeg", // Ваш файл
-                isDefault: false
+                price: 1000,
+                image: "images/axe_gradient.jpeg"
             },
             {
                 id: 7,
-                name: "Ледяные баррикады",
-                type: "barricades",
-                description: "Набор ледяных баррикад для арктических локаций.",
-                price: 750,
-                image: "images/barricades_ice.jpeg", // Ваш файл
-                isDefault: false
+                name: "Металлическая маска",
+                type: "skins",
+                description: "Прочная металлическая маска для защиты лица.",
+                price: 1000,
+                image: "https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
             },
             {
                 id: 8,
                 name: "Металлические баррикады",
                 type: "barricades",
                 description: "Прочные металлические баррикады повышенной защиты.",
-                price: 1200,
-                image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
-            },
-            {
-                id: 9,
-                name: "Колючие баррикады",
-                type: "barricades",
-                description: "Баррикады с колючей проволокой для отпугивания врагов.",
-                price: 850,
-                image: "https://images.unsplash.com/photo-1531315630201-bb15abeb1653?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
-            },
-            {
-                id: 10,
-                name: "Набор баррикад 'Крепость'",
-                type: "barricades",
-                description: "Полный набор баррикад для создания неприступной крепости.",
-                price: 2200,
-                image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
-            },
-            {
-                id: 11,
-                name: "Карта Palisada DLC",
-                type: "dlc",
-                description: "Эксклюзивная карта Palisada с новыми врагами и ресурсами.",
-                price: 1500,
-                image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
-            },
-            {
-                id: 12,
-                name: "Набор выживания DLC",
-                type: "dlc",
-                description: "Эксклюзивный набор для выживания с уникальным снаряжением.",
-                price: 950,
-                image: "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
-            },
-            {
-                id: 13,
-                name: "Ночь охотника DLC",
-                type: "dlc",
-                description: "Ночной режим с особыми врагами и испытаниями.",
-                price: 1200,
-                image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
-            },
-            {
-                id: 14,
-                name: "Зомби-апокалипсис DLC",
-                type: "dlc",
-                description: "Дополнение с ордами зомби и особым оружием.",
-                price: 1800,
-                image: "https://images.unsplash.com/photo-1533616688419-b7a585564f70?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
-            },
-            {
-                id: 15,
-                name: "Элитный набор оружия",
-                type: "skins",
-                description: "Набор элитных скинов для всего арсенала оружия.",
-                price: 2800,
-                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                isDefault: false
+                price: 1000,
+                image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
             }
         ];
 
-        // Cart state
-        let cart = [];
+        // User data
+        let userBalance = 1250; // в рублях
+        let selectedAmount = 1000; // сумма пополнения
         
         // DOM elements
+        const balanceDisplay = document.getElementById('balance-display');
+        const userBalanceSpan = document.getElementById('user-balance');
+        const depositButton = document.getElementById('deposit-button');
+        const customAmountInput = document.getElementById('custom-amount-input');
         const storeItemsContainer = document.getElementById('store-items');
-        const cartItemsContainer = document.getElementById('cart-items');
-        const cartCountElement = document.getElementById('cart-count');
-        const cartTotalElement = document.getElementById('cart-total');
-        const emptyCartMessage = document.getElementById('empty-cart-message');
-        const checkoutBtn = document.getElementById('checkout-btn');
-        const filterButtons = document.querySelectorAll('.filter-btn');
         
-        // Initialize the store
-        function initStore() {
-            renderStoreItems('all');
-            updateCartDisplay();
-            
-            // Add event listeners to filter buttons
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    // Render items with selected filter
-                    renderStoreItems(button.getAttribute('data-filter'));
-                });
-            });
-            
-            // Add event listener to checkout button
-            checkoutBtn.addEventListener('click', processCheckout);
+        // Sections
+        const sections = {
+            home: document.getElementById('home-section'),
+            deposit: document.getElementById('deposit-section'),
+            payment: document.getElementById('payment-methods'),
+            shop: document.getElementById('shop-section'),
+            support: document.getElementById('support-section'),
+            reports: document.getElementById('reports-section')
+        };
+        
+        // Modals
+        const modals = {
+            deposit: document.getElementById('deposit-modal'),
+            support: document.getElementById('support-modal'),
+            report: document.getElementById('report-modal')
+        };
+        
+        // Initialize
+        function init() {
+            updateBalanceDisplay();
+            renderStoreItems();
+            setupEventListeners();
+            showSection('home');
         }
         
-        // Render store items based on filter
-        function renderStoreItems(filter) {
-            storeItemsContainer.innerHTML = '';
+        // Show section
+        function showSection(sectionName) {
+            // Hide all sections
+            Object.values(sections).forEach(section => {
+                if (section) section.style.display = 'none';
+            });
             
-            let filteredItems = storeItems;
-            
-            if (filter !== 'all') {
-                filteredItems = storeItems.filter(item => item.type === filter);
+            // Show selected section
+            if (sections[sectionName]) {
+                sections[sectionName].style.display = 'block';
+                
+                // Show payment methods with deposit
+                if (sectionName === 'deposit' && sections.payment) {
+                    sections.payment.style.display = 'block';
+                } else if (sections.payment) {
+                    sections.payment.style.display = 'none';
+                }
             }
             
-            filteredItems.forEach(item => {
+            // Update active nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === sectionName) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Update balance display
+        function updateBalanceDisplay() {
+            balanceDisplay.textContent = userBalance.toLocaleString('ru-RU') + ' ₽';
+            userBalanceSpan.textContent = userBalance.toLocaleString('ru-RU');
+            
+            // Enable/disable buy buttons based on balance
+            document.querySelectorAll('.buy-btn').forEach(btn => {
+                const itemId = btn.getAttribute('data-id');
+                const item = storeItems.find(i => i.id == itemId);
+                if (item && userBalance < item.price) {
+                    btn.disabled = true;
+                    btn.textContent = 'Недостаточно ₽';
+                } else if (item) {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Купить';
+                }
+            });
+        }
+        
+        // Render store items
+        function renderStoreItems() {
+            storeItemsContainer.innerHTML = '';
+            
+            storeItems.forEach(item => {
                 const itemCard = document.createElement('div');
                 itemCard.className = 'item-card';
-                itemCard.setAttribute('data-id', item.id);
-                itemCard.setAttribute('data-type', item.type);
                 
                 let badgeClass = 'item-badge';
                 let badgeText = 'СКИН';
                 
                 if (item.type === 'dlc') {
-                    badgeClass += ' dlc-badge';
                     badgeText = 'DLC';
                 } else if (item.type === 'barricades') {
-                    badgeClass += ' barricade-badge';
                     badgeText = 'БАРРИКАДЫ';
                 }
+                
+                if (item.badge === 'arctic') {
+                    badgeClass += ' arctic-badge';
+                } else if (item.badge === 'bloody') {
+                    badgeClass += ' bloody-badge';
+                }
+                
+                const canBuy = userBalance >= item.price;
                 
                 itemCard.innerHTML = `
                     <div class="item-image">
@@ -913,9 +1330,9 @@
                         <h3 class="item-name">${item.name}</h3>
                         <p class="item-description">${item.description}</p>
                         <div class="item-price">
-                            <div class="price"><i class="fas fa-coins"></i> ${item.price}</div>
-                            <button class="buy-btn" data-id="${item.id}">
-                                <i class="fas fa-cart-plus"></i> Купить
+                            <div class="price"><i class="fas fa-ruble-sign"></i> ${item.price}</div>
+                            <button class="buy-btn" data-id="${item.id}" ${!canBuy ? 'disabled' : ''}>
+                                <i class="fas fa-shopping-cart"></i> ${canBuy ? 'Купить' : 'Недостаточно ₽'}
                             </button>
                         </div>
                     </div>
@@ -925,249 +1342,298 @@
                 
                 // Add event listener to buy button
                 const buyBtn = itemCard.querySelector('.buy-btn');
-                buyBtn.addEventListener('click', () => addToCart(item));
+                buyBtn.addEventListener('click', () => buyItem(item));
             });
         }
         
-        // Add item to cart
-        function addToCart(item) {
-            // Check if item is already in cart
-            const existingItem = cart.find(cartItem => cartItem.id === item.id);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    ...item,
-                    quantity: 1
-                });
-            }
-            
-            updateCartDisplay();
-            
-            // Show feedback
-            showNotification(`"${item.name}" добавлен в корзину!`);
-        }
-        
-        // Remove item from cart
-        function removeFromCart(itemId) {
-            cart = cart.filter(item => item.id !== itemId);
-            updateCartDisplay();
-        }
-        
-        // Update cart display
-        function updateCartDisplay() {
-            // Update cart count
-            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCountElement.textContent = totalItems;
-            
-            // Clear cart items container
-            cartItemsContainer.innerHTML = '';
-            
-            if (cart.length === 0) {
-                emptyCartMessage.style.display = 'block';
-                cartItemsContainer.appendChild(emptyCartMessage);
-                cartTotalElement.textContent = '0';
-                checkoutBtn.disabled = true;
-                checkoutBtn.style.opacity = '0.7';
-                checkoutBtn.style.cursor = 'not-allowed';
+        // Buy item
+        function buyItem(item) {
+            if (userBalance < item.price) {
+                showNotification('Недостаточно средств на балансе! Пополните счет.', 'error');
                 return;
             }
             
-            emptyCartMessage.style.display = 'none';
+            if (!confirm(`Купить "${item.name}" за ${item.price} ₽?`)) {
+                return;
+            }
             
-            // Add cart items
-            let totalPrice = 0;
+            userBalance -= item.price;
+            updateBalanceDisplay();
             
-            cart.forEach(item => {
-                const cartItemElement = document.createElement('div');
-                cartItemElement.className = 'cart-item';
-                
-                const itemTotalPrice = item.price * item.quantity;
-                totalPrice += itemTotalPrice;
-                
-                cartItemElement.innerHTML = `
-                    <div class="cart-item-info">
-                        <div class="cart-item-image">
-                            <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'">
-                        </div>
-                        <span class="cart-item-name">${item.name} x${item.quantity}</span>
-                    </div>
-                    <div class="cart-item-actions">
-                        <span class="cart-item-price"><i class="fas fa-coins"></i> ${itemTotalPrice}</span>
-                        <button class="remove-item" data-id="${item.id}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </div>
-                `;
-                
-                cartItemsContainer.appendChild(cartItemElement);
-                
-                // Add event listener to remove button
-                const removeBtn = cartItemElement.querySelector('.remove-item');
-                removeBtn.addEventListener('click', () => removeFromCart(item.id));
-            });
+            showNotification(`Вы купили "${item.name}"! Скин добавлен в ваш инвентарь.`, 'success');
             
-            // Update total price
-            cartTotalElement.textContent = `${totalPrice}`;
-            
-            // Enable checkout button
-            checkoutBtn.disabled = false;
-            checkoutBtn.style.opacity = '1';
-            checkoutBtn.style.cursor = 'pointer';
+            // В реальном проекте здесь был бы запрос к серверу
+            console.log(`Куплен предмет: ${item.name} за ${item.price} ₽`);
         }
         
-        // Process checkout (FreeKassa integration)
-        function processCheckout() {
-            if (cart.length === 0) return;
-            
-            // Calculate total
-            const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-            
-            // Show checkout modal
-            showCheckoutModal(totalPrice);
-        }
-        
-        // Show checkout modal with FreeKassa
-        function showCheckoutModal(totalPrice) {
-            // Create modal
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 1000;
-            `;
-            
-            // Generate order description
-            const orderDescription = cart.map(item => 
-                `${item.name} x${item.quantity}`
-            ).join(', ');
-            
-            // IMPORTANT: В реальном проекте здесь будут данные вашего магазина FreeKassa
-            // merchant_id, secret_word, order_id и другие параметры
-            
-            modal.innerHTML = `
-                <div style="
-                    background-color: #1a252f;
-                    border-radius: 10px;
-                    padding: 30px;
-                    width: 90%;
-                    max-width: 500px;
-                    border: 2px solid #ff6b35;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-                ">
-                    <h3 style="color: #ff6b35; margin-bottom: 20px; font-size: 24px;">
-                        <i class="fas fa-lock"></i> Оплата через FreeKassa
-                    </h3>
-                    
-                    <p style="margin-bottom: 20px; color: #b0b7c3;">
-                        Вы собираетесь оплатить покупку на сумму <strong style="color: #ffd166;"><i class="fas fa-coins"></i> ${totalPrice} Born Coins</strong>.
-                    </p>
-                    
-                    <div style="background-color: #0c1218; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
-                        <h4 style="color: #fff; margin-bottom: 10px;">Содержимое заказа:</h4>
-                        <ul style="list-style-type: none; color: #b0b7c3;">
-                            ${cart.map(item => `<li><i class="fas fa-coins" style="color: #ffd166;"></i> ${item.name} x${item.quantity} - ${item.price * item.quantity} Born Coins</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <p style="color: #b0b7c3; font-size: 14px;">
-                            <i class="fas fa-shield-alt" style="color: #06d6a0;"></i> Все платежи защищены через FreeKassa. После оплаты предметы автоматически появятся в вашем игровом инвентаре.
-                        </p>
-                    </div>
-                    
-                    <!-- FreeKassa Payment Form -->
-                    <form id="freekassa-form" method="POST" action="https://pay.freekassa.ru/" style="display: none;">
-                        <input type="hidden" name="m" value="YOUR_MERCHANT_ID">
-                        <input type="hidden" name="oa" value="${totalPrice}">
-                        <input type="hidden" name="o" value="ORDER_${Date.now()}">
-                        <input type="hidden" name="s" id="freekassa-signature">
-                        <input type="hidden" name="i" value="rub">
-                        <input type="hidden" name="lang" value="ru">
-                        <input type="hidden" name="us_userid" value="USER_ID">
-                        <input type="hidden" name="us_order" value="${orderDescription}">
-                    </form>
-                    
-                    <div style="display: flex; gap: 15px; margin-top: 30px;">
-                        <button id="confirm-payment" style="
-                            flex: 2;
-                            padding: 15px;
-                            background-color: #06d6a0;
-                            color: white;
-                            border: none;
-                            border-radius: 5px;
-                            font-weight: bold;
-                            cursor: pointer;
-                            font-size: 16px;
-                        ">
-                            <i class="fas fa-check"></i> Перейти к оплате в FreeKassa
-                        </button>
-                        
-                        <button id="cancel-payment" style="
-                            flex: 1;
-                            padding: 15px;
-                            background-color: #2a3a4a;
-                            color: white;
-                            border: none;
-                            border-radius: 5px;
-                            font-weight: bold;
-                            cursor: pointer;
-                        ">
-                            <i class="fas fa-times"></i> Отмена
-                        </button>
-                    </div>
-                    
-                    <div style="margin-top: 20px; padding: 10px; background-color: #0c1218; border-radius: 5px;">
-                        <p style="color: #8a9bb2; font-size: 12px; text-align: center;">
-                            <i class="fas fa-info-circle"></i> После подтверждения вы будете перенаправлены на защищенную страницу FreeKassa для завершения оплаты
-                        </p>
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(modal);
-            
-            // Add event listeners
-            document.getElementById('confirm-payment').addEventListener('click', () => {
-                // В реальном проекте здесь должна быть генерация подписи для FreeKassa
-                // и отправка формы
-                
-                // Для демо-версии показываем успешное сообщение
-                showNotification('Перенаправление на FreeKassa... Оплата прошла успешно! Предметы добавлены в инвентарь.');
-                
-                // В реальном проекте раскомментируйте:
-                // document.getElementById('freekassa-form').submit();
-                
-                // Для демо очищаем корзину
-                setTimeout(() => {
-                    cart = [];
-                    updateCartDisplay();
-                    document.body.removeChild(modal);
-                }, 1500);
+        // Setup event listeners
+        function setupEventListeners() {
+            // Navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const section = link.getAttribute('data-section');
+                    showSection(section);
+                });
             });
             
-            document.getElementById('cancel-payment').addEventListener('click', () => {
-                document.body.removeChild(modal);
+            // Amount selection
+            document.querySelectorAll('.amount-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove selected class from all options
+                    document.querySelectorAll('.amount-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked option
+                    option.classList.add('selected');
+                    
+                    // Update selected amount
+                    selectedAmount = parseInt(option.getAttribute('data-amount'));
+                    customAmountInput.value = '';
+                    
+                    // Update deposit button
+                    updateDepositButton();
+                });
             });
             
-            // Close modal when clicking outside
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    document.body.removeChild(modal);
+            // Custom amount input
+            customAmountInput.addEventListener('input', () => {
+                const value = parseInt(customAmountInput.value) || 0;
+                
+                if (value > 0) {
+                    // Remove selected class from all options
+                    document.querySelectorAll('.amount-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Update selected amount
+                    selectedAmount = Math.min(value, 1000);
+                    
+                    if (selectedAmount > 1000) {
+                        customAmountInput.value = 1000;
+                        selectedAmount = 1000;
+                    }
+                    
+                    // Update deposit button
+                    updateDepositButton();
                 }
             });
+            
+            // Deposit button
+            depositButton.addEventListener('click', showDepositModal);
+            
+            // Support buttons
+            document.getElementById('support-btn').addEventListener('click', () => {
+                showSection('support');
+            });
+            
+            // Support options
+            document.getElementById('report-bug-option').addEventListener('click', () => {
+                openSupportModal('Сообщить о баге', 'bug');
+            });
+            
+            document.getElementById('report-cheater-option').addEventListener('click', () => {
+                openSupportModal('Жалоба на читера', 'cheater');
+            });
+            
+            document.getElementById('game-issue-option').addEventListener('click', () => {
+                openSupportModal('Проблемы с игрой', 'game_issue');
+            });
+            
+            document.getElementById('payment-issue-option').addEventListener('click', () => {
+                openSupportModal('Проблемы с оплатой', 'payment');
+            });
+            
+            document.getElementById('contact-support-option').addEventListener('click', () => {
+                openSupportModal('Связаться с поддержкой', 'other');
+            });
+            
+            document.getElementById('rules-option').addEventListener('click', () => {
+                showNotification('Раздел правил и FAQ будет добавлен в следующем обновлении', 'info');
+            });
+            
+            // Report button
+            document.getElementById('new-report-btn').addEventListener('click', () => {
+                openReportModal();
+            });
+            
+            // Modal close buttons
+            document.getElementById('close-deposit-modal').addEventListener('click', () => {
+                closeModal('deposit');
+            });
+            
+            document.getElementById('close-support-modal').addEventListener('click', () => {
+                closeModal('support');
+            });
+            
+            document.getElementById('close-report-modal').addEventListener('click', () => {
+                closeModal('report');
+            });
+            
+            // Form submissions
+            document.getElementById('submit-support').addEventListener('click', submitSupportForm);
+            document.getElementById('submit-report').addEventListener('click', submitReportForm);
+            
+            // Close modals on outside click
+            Object.keys(modals).forEach(modalName => {
+                modals[modalName].addEventListener('click', (e) => {
+                    if (e.target === modals[modalName]) {
+                        closeModal(modalName);
+                    }
+                });
+            });
+        }
+        
+        // Update deposit button
+        function updateDepositButton() {
+            const amount = selectedAmount;
+            depositButton.innerHTML = `<i class="fas fa-lock"></i> Пополнить ${amount} ₽ через FreeKassa`;
+            
+            // Update modal display
+            document.getElementById('deposit-amount-display').textContent = amount.toLocaleString('ru-RU') + ' ₽';
+        }
+        
+        // Show deposit modal
+        function showDepositModal() {
+            const amount = selectedAmount;
+            
+            if (amount < 10) {
+                showNotification('Минимальная сумма пополнения - 10 ₽', 'error');
+                return;
+            }
+            
+            if (amount > 1000) {
+                showNotification('Максимальная сумма пополнения - 1000 ₽', 'error');
+                return;
+            }
+            
+            // Update modal with selected amount
+            document.getElementById('deposit-amount-display').textContent = amount.toLocaleString('ru-RU') + ' ₽';
+            
+            // Update FreeKassa link with amount
+            const orderId = 'BORN_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
+            const freeKassaUrl = `https://pay.freekassa.net/?m=68728&oa=${amount}&o=${orderId}&s=001bdd16f4f3a5c7ba8599dc96f2a838&currency=RUB`;
+            
+            const depositLink = modals.deposit.querySelector('a');
+            depositLink.href = freeKassaUrl;
+            
+            // Show modal
+            openModal('deposit');
+        }
+        
+        // Open support modal
+        function openSupportModal(title, category) {
+            document.getElementById('support-modal-title').textContent = title;
+            document.getElementById('support-category').value = category;
+            
+            // Set subject based on category
+            const subjectInput = document.getElementById('support-subject');
+            switch(category) {
+                case 'bug':
+                    subjectInput.value = 'Сообщение о баге в игре';
+                    break;
+                case 'cheater':
+                    subjectInput.value = 'Жалоба на читера';
+                    break;
+                case 'game_issue':
+                    subjectInput.value = 'Техническая проблема с игрой';
+                    break;
+                case 'payment':
+                    subjectInput.value = 'Проблема с оплатой';
+                    break;
+                default:
+                    subjectInput.value = '';
+            }
+            
+            openModal('support');
+        }
+        
+        // Open report modal
+        function openReportModal() {
+            // Set current date and time
+            const now = new Date();
+            const localDateTime = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+                .toISOString()
+                .slice(0, 16);
+            document.getElementById('report-date').value = localDateTime;
+            
+            openModal('report');
+        }
+        
+        // Open modal
+        function openModal(modalName) {
+            if (modals[modalName]) {
+                modals[modalName].classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // Close modal
+        function closeModal(modalName) {
+            if (modals[modalName]) {
+                modals[modalName].classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Reset forms
+                if (modalName === 'support') {
+                    document.getElementById('support-form').reset();
+                } else if (modalName === 'report') {
+                    document.getElementById('report-form').reset();
+                }
+            }
+        }
+        
+        // Submit support form
+        function submitSupportForm() {
+            const form = document.getElementById('support-form');
+            
+            if (!form.checkValidity()) {
+                showNotification('Заполните все обязательные поля', 'error');
+                return;
+            }
+            
+            const formData = {
+                category: document.getElementById('support-category').value,
+                subject: document.getElementById('support-subject').value,
+                message: document.getElementById('support-message').value,
+                email: document.getElementById('support-email').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // В реальном проекте здесь отправка на сервер
+            console.log('Support request:', formData);
+            
+            closeModal('support');
+            showNotification('Ваше обращение отправлено в поддержку. Ответ придет на указанный email в течение 24 часов.', 'success');
+        }
+        
+        // Submit report form
+        function submitReportForm() {
+            const form = document.getElementById('report-form');
+            
+            if (!form.checkValidity()) {
+                showNotification('Заполните все обязательные поля', 'error');
+                return;
+            }
+            
+            const formData = {
+                player: document.getElementById('report-player').value,
+                type: document.getElementById('report-type').value,
+                description: document.getElementById('report-description').value,
+                date: document.getElementById('report-date').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // В реальном проекте здесь отправка на сервер
+            console.log('Player report:', formData);
+            
+            closeModal('report');
+            showNotification('Жалоба отправлена. Модераторы рассмотрят ее в течение 48 часов.', 'success');
         }
         
         // Show notification
-        function showNotification(message) {
+        function showNotification(message, type = 'info') {
             // Remove existing notification if any
             const existingNotification = document.querySelector('.notification');
             if (existingNotification) {
@@ -1176,24 +1642,8 @@
             
             // Create notification
             const notification = document.createElement('div');
-            notification.className = 'notification';
-            notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background-color: #06d6a0;
-                color: white;
-                padding: 15px 25px;
-                border-radius: 5px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-                z-index: 1001;
-                animation: slideIn 0.3s ease-out;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                max-width: 400px;
-            `;
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i> ${message}`;
             
             document.body.appendChild(notification);
             
@@ -1210,30 +1660,11 @@
             }, 3000);
         }
         
-        // Add CSS for notifications
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', init);
         
-        // Initialize the store when page loads
-        document.addEventListener('DOMContentLoaded', initStore);
-        
-        // Handle image loading errors
-        window.addEventListener('error', function(e) {
-            if (e.target.tagName === 'IMG') {
-                e.target.src = 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
-            }
-        }, true);
+        // Update deposit button initially
+        updateDepositButton();
     </script>
 </body>
 </html>
